@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  background: #161616;
+}
+
+#root {
+  height: 100vh;
+}
+.bi {
+  background: #161616 !important;
+}
+
+.bh.bi {
+  background: #ffffff !important;
+}
+
+.bi-diagram-port {
+  background: #ffb91d !important;
+}
+
+.bi-diagram {
+  border: 0.07rem solid #161616 !important;
+  border-radius: 0% !important;
+  height: 91vh !important;
+  width: 100vw !important;
+}
