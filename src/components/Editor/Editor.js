@@ -13,7 +13,7 @@ import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-jsx";
 require(`ace-builds/src-noconflict/mode-sql`);
 require(`ace-builds/src-noconflict/snippets/sql`);
-require(`ace-builds/src-noconflict/theme-solarized_dark`);
+require(`ace-builds/src-noconflict/theme-xcode`);
 
 export class Editor extends Component {
 
@@ -87,27 +87,16 @@ handleDelete= () =>{
                 </Navbar>
                 <Container>
                     <Row>
-                        <Col xs={6}>
-                            <AceEditor
-                                mode="sql"
-                                theme="solarized_dark"
-                                value={this.state.query}
-                                fontSize={20}
-                                style={{border:"3px solid #3157D3",maxHeight:"50vh"}}
-                                // onChange={onChange}
-                                name="UNIQUE_ID_OF_DIV"
-                                editorProps={{ $blockScrolling: true }}
-                            />
-                        </Col>
-                        <Col xs={6}>
-                            <div  style={{maxHeight:"50vh",overflowY:"auto"}}>
-                            <Table  bordered hover >
-                                <thead>
-                                    <tr>
-                                    <th>id</th>
+                       
+                        <Col lg={12}>
+                            <div className = {classes.scroll}  style={{minHeight:"45vh", maxHeight:"45vh",overflowY:"auto"}}>
+                            <Table   hover>
+                                <thead >
+                                    <tr className = {classes.table_border}>
+                                    <th>ID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
-                                    <th>city</th>
+                                    <th>City</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -124,8 +113,22 @@ handleDelete= () =>{
                             </div>
                         </Col>
                     </Row>
+                    <br/>
                     <Row>
-                    <div style={{marginLeft:"30%",minHeight:"34vh"}} >
+                    <Col xs={6}>
+                            <AceEditor
+                                mode="sql"
+                                theme="xcode"
+                                value={this.state.query}
+                                fontSize={18}
+                                style={{borderTop:"10px solid #3157D3",maxHeight:"30vh"}}
+                                // onChange={onChange}
+                                name="UNIQUE_ID_OF_DIV"
+                                editorProps={{ $blockScrolling: true }}
+                            />
+                        </Col>
+                        <Col lg={6}>
+                        <div style={{marginLeft:"20%",minHeight:"34vh"}} >
                             <br/>
                             <center>
                             <span style={{display:"flex",flexDirection: 'row'}}>
@@ -142,11 +145,14 @@ handleDelete= () =>{
                                             shadow="3"
                                             hoverShadow="4"
                                             m={{ r: "1rem" }}
+                                            style={{marginLeft:"50px"}}
                                             onClick = {()=>this.handleSelect()}
                                             className = {classes.query_button}
                                         >                   
                                           Select
                                         </Button>
+                                        </span>
+                                        <span style={{display:"flex",flexDirection: 'row'}}>
                                         <Button
                                             shadow="3"
                                             hoverShadow="4"
@@ -160,6 +166,7 @@ handleDelete= () =>{
                                             shadow="3"
                                             hoverShadow="4"
                                             m={{ r: "1rem" }}
+                                            style={{marginLeft:"50px"}}
                                             onClick = {()=>this.handleDelete()}
                                             className = {classes.query_button}
                                         >                   
@@ -168,6 +175,7 @@ handleDelete= () =>{
                                         </span>
                                  </center>
                             </div>
+                        </Col> 
                     </Row>
                     </Container>
             </div>

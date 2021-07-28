@@ -5,10 +5,10 @@ const Loader = () => {
     return (
         <div style={{display:"flex", justifyContent:"center",height:"100vh",alignItems:"center",backgroundColor:"#fff"}}>
             <BoxesLoader
-              boxColor={"#121212"}
+              boxColor={"#2948b1"}
               style={{ marginBottom: "20px" }}
-              desktopSize={"128px"}
-              mobileSize={"80px"}
+              desktopSize={"98px"}
+              mobileSize={"50px"}
             />
           </div>
     )
